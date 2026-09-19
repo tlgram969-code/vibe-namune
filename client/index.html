@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f4f3f0" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0a1120" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
+
+    <title>وایب نمونه</title>
+    <meta
+      name="description"
+      content="وایب نمونه — نمونه کارهای من با وایب کدینگ: ربات‌های تلگرام، نرم‌افزارها، پلاگین‌ها و وب‌سایت‌ها."
+    />
+    <meta name="author" content="وایب نمونه" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Share cards. useSeo() rewrites these per route once the app mounts. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fa_IR" />
+    <meta property="og:site_name" content="وایب نمونه" />
+    <meta property="og:title" content="وایب نمونه" />
+    <meta
+      property="og:description"
+      content="نمونه کارهای من با وایب کدینگ: ربات‌های تلگرام، نرم‌افزارها، پلاگین‌ها و وب‌سایت‌ها."
+    />
+    <meta property="og:image" content="/og-cover.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="وایب نمونه" />
+    <meta name="twitter:image" content="/og-cover.png" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="preload" href="/fonts/Vazirmatn-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/Vazirmatn-ExtraBold.woff2" as="font" type="font/woff2" crossorigin />
+
+    <script>
+      // Applies the saved theme before first paint so there is no flash of the wrong one.
+      (function () {
+        try {
+          var saved = localStorage.getItem('vn-theme');
+          var dark = saved ? saved === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        } catch (e) {
+          document.documentElement.dataset.theme = 'light';
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <div style="padding: 3rem 1.5rem; text-align: center; font-family: system-ui, sans-serif">
+        <h1>وایب نمونه</h1>
+        <p>برای دیدن این سایت باید جاوااسکریپت مرورگر روشن باشد.</p>
+      </div>
+    </noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
